@@ -2,12 +2,14 @@ import Container from '~styles/container';
 import { extendTheme } from '@chakra-ui/react';
 import Card from '~styles/card';
 import Button from '~styles/button';
+import Form from '~styles/form';
 
 const theme = extendTheme({
   components: {
     Container,
     Button,
     Card,
+    Form,
   },
   fonts: {
     heading: '"Montagu Slab", serif',

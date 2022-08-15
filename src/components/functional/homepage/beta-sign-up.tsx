@@ -39,10 +39,9 @@ const BetaSignUp = ({
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm<BetaSignUpForm>();
-  const onSubmit = handleSubmit((formData) => {
+  const onSubmit = handleSubmit((/*formData*/) => {
     // console.log(formData);
     // reset();
     toast({
@@ -87,7 +86,6 @@ const BetaSignUp = ({
                   errors={errors}
                   label={'Email address'}
                   type={'email'}
-                  placeholder={'example@example.com'}
                   helperText={
                     'We will never share or sell your email, pinky promise.'
                   }
@@ -107,7 +105,6 @@ const BetaSignUp = ({
                   }}
                   errors={errors}
                   label={'Username'}
-                  placeholder={'username'}
                   helperText={"Reserve it before it's taken."}
                 />
 
@@ -115,6 +112,7 @@ const BetaSignUp = ({
                 <FormField
                   fieldName={'inviteCode'}
                   register={register}
+                  label={'Invite code'}
                   options={{
                     required: 'Please enter an invite code.',
                     pattern: {
@@ -124,7 +122,6 @@ const BetaSignUp = ({
                     },
                   }}
                   errors={errors}
-                  placeholder={'LETMEIN-123'}
                   helperText={
                     "We're currently on beta, but we promise to let you in ASAP."
                   }
@@ -140,7 +137,6 @@ const BetaSignUp = ({
                     maxLength: { value: 96, message: 'The name is too long.' },
                   }}
                   errors={errors}
-                  placeholder={'Marvin'}
                   helperText={
                     "Just so that we know who to write to when you're invite is ready."
                   }

@@ -16,7 +16,6 @@ type FormFieldProps = {
   errors: FieldErrorsImpl;
   label?: string;
   type?: string;
-  placeholder?: string;
   helperText?: string;
   isDisabled?: boolean;
 };
@@ -28,23 +27,23 @@ const FormField = ({
   errors,
   label,
   type,
-  placeholder,
   helperText,
   isDisabled,
 }: FormFieldProps) => (
   <FormControl
+    variant={'floating'}
     isRequired={!!options.required}
     isInvalid={!!errors[fieldName]}
     isDisabled={isDisabled}
   >
-    <FormLabel htmlFor={fieldName}>{label || fieldName}</FormLabel>
-
     <Input
       id={fieldName}
       type={type || 'text'}
-      placeholder={placeholder}
+      placeholder={' '}
       {...register(fieldName, options)}
     />
+
+    <FormLabel htmlFor={fieldName}>{label || fieldName}</FormLabel>
 
     {errors[fieldName] ? (
       <FormErrorMessage>
