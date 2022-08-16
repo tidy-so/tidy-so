@@ -5,6 +5,7 @@ specifiers:
   '@chakra-ui/theme': 2.1.7
   '@emotion/react': 11.10.0
   '@emotion/styled': 11.10.0
+  '@nikolovlazar/chakra-ui-prose': 1.2.1
   '@types/node': 18.7.2
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
@@ -29,6 +30,7 @@ dependencies:
   '@chakra-ui/theme': 2.1.7
   '@emotion/react': 11.10.0_ug65io7jkbhmo4fihdmbrh3ina
   '@emotion/styled': 11.10.0_lzabd6uj4wst47copsenr4b56q
+  '@nikolovlazar/chakra-ui-prose': 1.2.1_lszvv7fqtgf73rzibnr6eazpw4
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   next: 12.2.5_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -1287,6 +1289,17 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@nikolovlazar/chakra-ui-prose/1.2.1_lszvv7fqtgf73rzibnr6eazpw4:
+    resolution: {integrity: sha512-I8EZiKDGkOnzBOkPquLWir1gvHoKpo7x23O+VusK2WhPcWtgR7p56On+e/QPMCitMbV4xW997ecivCohOxGk9Q==}
+    peerDependencies:
+      '@chakra-ui/react': '>=1.8.6'
+      '@chakra-ui/system': '>=1.11.2'
+      react: '>=17.0.2'
+    dependencies:
+      '@chakra-ui/react': 2.2.6_35sbl6b2epv3k56qaiogy2w5va
+      react: 18.2.0
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
