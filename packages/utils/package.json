@@ -1,0 +1,29 @@
+{
+  "name": "@tidy-so/utils",
+  "version": "1.0.0",
+  "description": "",
+  "prettier": "@tidy-so/config/.prettierrc",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "lint": "eslint *.ts",
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
+  "files": [
+    ".eslintrc.js",
+    ".prettierrc.js",
+    "next.config.js",
+    "tsconfig.nextjs.json"
+  ],
+  "keywords": [],
+  "author": "David Guijarro",
+  "devDependencies": {
+    "@tidy-so/config": "*",
+    "@typescript-eslint/eslint-plugin": "5.33.0",
+    "@typescript-eslint/parser": "5.33.0",
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "8.5.0",
+    "typescript": "4.7.4"
+  }
+}

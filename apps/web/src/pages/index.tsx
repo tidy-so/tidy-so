@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Hero from '../components/functional/homepage/hero';
-import HighlightCarousel from '../components/functional/homepage/highlight-carousel';
+import Hero from '~components/functional/homepage/hero';
+import HighlightCarousel from '~components/functional/homepage/highlight-carousel';
 import {
   Box,
   Container,
