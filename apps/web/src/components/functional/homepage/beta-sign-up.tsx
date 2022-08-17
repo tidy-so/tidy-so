@@ -11,7 +11,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
-import { emailRegex, inviteCodeRegex, usernameRegex } from '../../../utils';
+import { emailRegex, inviteCodeRegex, usernameRegex } from '@tidy-so/utils';
 import FormField from '~components/functional/form-field';
 
 type BetaSignUpProps = {
