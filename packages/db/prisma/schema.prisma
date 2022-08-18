@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model BetaUser {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  username  String   @unique
+  firstName  String?
+
+  usedInvite Invite @relation("usedInvite", fields: [inviteId], references: [id], onUpdate: NoAction)
+  inviteId   String @unique
+
+  invites Invite[] @relation("invites")
+}
+
+model Invite {
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  code      String
+  usedBy    BetaUser? @relation("usedInvite")
+  owner     BetaUser  @relation("invites", fields: [ownerId], references: [id])
+  ownerId   String
+}

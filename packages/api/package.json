@@ -1,20 +1,14 @@
 {
-  "name": "@tidy-so/utils",
+  "name": "@tidy-so/api",
   "version": "1.0.0",
   "description": "",
   "prettier": "@tidy-so/config/.prettierrc",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
-    "lint": "TIMING=1 eslint *.ts",
+    "lint": "TIMING=1 eslint *.ts && prisma format",
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
-  "files": [
-    ".eslintrc.js",
-    ".prettierrc.js",
-    "next.config.js",
-    "tsconfig.nextjs.json"
-  ],
   "keywords": [],
   "author": "David Guijarro",
   "devDependencies": {
@@ -27,6 +21,13 @@
     "typescript": "4.7.4"
   },
   "dependencies": {
-    "env-var": "7.1.1"
+    "@tidy-so/db": "*",
+    "@trpc/client": "9.27.0",
+    "@trpc/react": "9.27.0",
+    "@trpc/server": "9.27.0",
+    "next": "12.2.5",
+    "react-query": "3",
+    "superjson": "1.9.1",
+    "zod": "3.18.0"
   }
 }
