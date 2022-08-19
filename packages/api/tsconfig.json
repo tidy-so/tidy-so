@@ -1,9 +1,9 @@
 {
   "extends": "@tidy-so/config/tsconfig.base.json",
-  //  "include": [
-  //    "./index.ts"
-  //  ],
+    "include": [
+      "."
+    ],
   "exclude": [
-    "node_modules"
+    "node_modules", "dist"
   ]
 }

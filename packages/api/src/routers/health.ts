@@ -1,7 +1,7 @@
 import { createRouter } from '../create-router';
 
 export const healthRouter = createRouter().query('health', {
-  resolve() {
+  async resolve() {
     return { success: true };
   },
 });

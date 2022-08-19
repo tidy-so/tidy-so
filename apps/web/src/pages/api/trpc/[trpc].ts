@@ -1,7 +1,6 @@
-import * as trpcNext from '@trpc/server/adapters/next';
-import { appRouter, AppRouter, createContext } from '@tidy-so/api';
+import { appRouter, createContext, trpcNext } from '@tidy-so/api';
 
-export default trpcNext.createNextApiHandler<AppRouter>({
+export default trpcNext.createNextApiHandler({
   router: appRouter,
   /**
    * @link https://trpc.io/docs/context
@@ -20,8 +19,8 @@ export default trpcNext.createNextApiHandler<AppRouter>({
    * Enable query batching
    */
   batching: {
-    enabled: true,
-  },
+    enabled: true
+  }
   /**
    * @link https://trpc.io/docs/caching#api-response-caching
    */

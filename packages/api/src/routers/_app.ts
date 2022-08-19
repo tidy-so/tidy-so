@@ -1,6 +1,6 @@
 import { createRouter } from '../create-router';
 import { healthRouter } from './health';
-import { transformer } from '../hooks';
+import superjson from 'superjson';
 // import { itemsForSaleRouter } from './items-for-sale';
 // import { teamsRouter } from './teams';
 // import { analyticsRouter } from '~server/routers/analytics';
@@ -22,7 +22,7 @@ export const appRouter = createRouter()
    * Add data transformers
    * @link https://trpc.io/docs/data-transformers
    */
-  .transformer(transformer)
+  .transformer(superjson)
   /**
    * Optionally do custom error (type safe!) formatting
    * @link https://trpc.io/docs/error-formatting

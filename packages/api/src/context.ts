@@ -1,7 +1,7 @@
 import * as trpc from '@trpc/server';
 import * as trpcNext from '@trpc/server/adapters/next';
 // import type { DataModel } from '@tidy-so/db';
-import { db } from '@tidy-so/db';
+import { db } from './services/db';
 // import { getSession } from 'next-auth/react';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
