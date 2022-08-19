@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import * as _tidy_so_db from '@tidy-so/db';
 import { PrismaClient } from '@tidy-so/db';
 import * as trpc from '@trpc/server';
+import { inferProcedureOutput, inferProcedureInput, inferSubscriptionOutput } from '@trpc/server';
 import * as trpcNext from '@trpc/server/adapters/next';
 export { trpcNext };
 import * as _trpc_server_dist_declarations_src_internals_procedure from '@trpc/server/dist/declarations/src/internals/procedure';
@@ -94,4 +95,52 @@ declare const appRouter: _trpc_server_dist_declarations_src_router.Router<{
 }>>, {}, {}, trpc.DefaultErrorShape>;
 declare type AppRouter = typeof appRouter;
 
-export { AppRouter, Context, appRouter, createContext, createProtectedRouter, createRouter };
+/**
+ * Enum containing all api query paths
+ */
+declare type TQuery = keyof AppRouter['_def']['queries'];
+/**
+ * Enum containing all api mutation paths
+ */
+declare type TMutation = keyof AppRouter['_def']['mutations'];
+/**
+ * Enum containing all api subscription paths
+ */
+declare type TSubscription = keyof AppRouter['_def']['subscriptions'];
+/**
+ * This is a helper method to infer the output of a query resolver
+ * @example type HelloOutput = InferQueryOutput<'hello'>
+ */
+declare type InferQueryOutput<TRouteKey extends TQuery> = inferProcedureOutput<AppRouter['_def']['queries'][TRouteKey]>;
+/**
+ * This is a helper method to infer the input of a query resolver
+ * @example type HelloInput = InferQueryInput<'hello'>
+ */
+declare type InferQueryInput<TRouteKey extends TQuery> = inferProcedureInput<AppRouter['_def']['queries'][TRouteKey]>;
+/**
+ * This is a helper method to infer the output of a mutation resolver
+ * @example type HelloOutput = InferMutationOutput<'hello'>
+ */
+declare type InferMutationOutput<TRouteKey extends TMutation> = inferProcedureOutput<AppRouter['_def']['mutations'][TRouteKey]>;
+/**
+ * This is a helper method to infer the input of a mutation resolver
+ * @example type HelloInput = InferMutationInput<'hello'>
+ */
+declare type InferMutationInput<TRouteKey extends TMutation> = inferProcedureInput<AppRouter['_def']['mutations'][TRouteKey]>;
+/**
+ * This is a helper method to infer the output of a subscription resolver
+ * @example type HelloOutput = InferSubscriptionOutput<'hello'>
+ */
+declare type InferSubscriptionOutput<TRouteKey extends TSubscription> = inferProcedureOutput<AppRouter['_def']['subscriptions'][TRouteKey]>;
+/**
+ * This is a helper method to infer the asynchronous output of a subscription resolver
+ * @example type HelloAsyncOutput = InferAsyncSubscriptionOutput<'hello'>
+ */
+declare type InferAsyncSubscriptionOutput<TRouteKey extends TSubscription> = inferSubscriptionOutput<AppRouter, TRouteKey>;
+/**
+ * This is a helper method to infer the input of a subscription resolver
+ * @example type HelloInput = InferSubscriptionInput<'hello'>
+ */
+declare type InferSubscriptionInput<TRouteKey extends TSubscription> = inferProcedureInput<AppRouter['_def']['subscriptions'][TRouteKey]>;
+
+export { AppRouter, Context, InferAsyncSubscriptionOutput, InferMutationInput, InferMutationOutput, InferQueryInput, InferQueryOutput, InferSubscriptionInput, InferSubscriptionOutput, appRouter, createContext, createProtectedRouter, createRouter };

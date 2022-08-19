@@ -3,22 +3,21 @@
     "selected": 1,
     "workspacePrefix": "/Users/davidguijarro/Documents/__hackathon/tidy-so"
   },
-  "1 info pnpm": {
-    "err": {
-      "name": "Error",
-      "message": "not found: o",
-      "code": "ENOENT",
-      "stack": "Error: not found: o\n    at getNotFoundError (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:41677:51)\n    at Function.whichSync [as sync] (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:41754:13)\n    at getCommandAbsolutePathSync (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:43319:44)\n    at default_1 (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:43328:32)\n    at /Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:172151:39"
-    }
-  },
-  "2 error pnpm": {
-    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
-    "prefix": "/Users/davidguijarro/Documents/__hackathon/tidy-so",
+  "1 error pnpm": {
+    "code": "ELIFECYCLE",
+    "errno": "ENOENT",
+    "syscall": "spawn",
+    "file": "sh",
+    "pkgid": "tidy-so@1.0.0",
+    "stage": "clean",
+    "script": "turbo run clean && rm -rf node_modules",
+    "pkgname": "tidy-so",
     "err": {
       "name": "pnpm",
-      "message": "not found: o",
-      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
-      "stack": "Error: not found: o\n    at getNotFoundError (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:41677:51)\n    at Function.whichSync [as sync] (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:41754:13)\n    at getCommandAbsolutePathSync (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:43319:44)\n    at default_1 (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:43328:32)\n    at /Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:172151:39"
+      "message": "tidy-so@1.0.0 clean: `turbo run clean && rm -rf node_modules`\nspawn ENOENT",
+      "code": "ELIFECYCLE",
+      "stack": "pnpm: tidy-so@1.0.0 clean: `turbo run clean && rm -rf node_modules`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/Users/davidguijarro/.node/corepack/pnpm/7.1.2/dist/pnpm.cjs:93455:22)\n    at ChildProcess.emit (node:events:527:28)\n    at maybeClose (node:internal/child_process:1092:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)"
     }
-  }
+  },
+  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
 }

@@ -22,19 +22,24 @@ importers:
       '@tidy-so/utils': '*'
       '@trpc/client': 9.27.0
       '@trpc/next': 9.27.0
+      '@trpc/react': 9.27.0
       '@types/node': 18.7.2
       '@types/react': 18.0.17
       '@types/react-dom': 18.0.6
-      '@types/react-modal': 3.13.1
+      '@typescript-eslint/eslint-plugin': 5.33.0
+      '@typescript-eslint/parser': 5.33.0
       autoprefixer: 10.4.8
       env-var: 7.1.1
       eslint: 8.21.0
+      eslint-config-next: 12.2.5
+      eslint-config-prettier: 8.5.0
       framer-motion: 6.5.1
       next: 12.2.5
       prettier: 2.7.1
       react: 18.2.0
       react-dom: 18.2.0
       react-hook-form: 7.34.1
+      react-query: 3.39.2
       superjson: 1.9.1
       swiper: 8.3.2
       typescript: 4.7.4
@@ -47,13 +52,15 @@ importers:
       '@tidy-so/api': link:../../packages/api
       '@tidy-so/utils': link:../../packages/utils
       '@trpc/client': 9.27.0
-      '@trpc/next': 9.27.0_kaozq6pwpa25evkpxx7txxuxzq
+      '@trpc/next': 9.27.0_53c2cvpmnxe5mtuhk5oahaulfq
+      '@trpc/react': 9.27.0_47cvokhwezr543ruivyygds3ai
       env-var: 7.1.1
       framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
       next: 12.2.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.34.1_react@18.2.0
+      react-query: 3.39.2_biqbaboplfbrettd7655fr4n2y
       superjson: 1.9.1
       swiper: 8.3.2
     devDependencies:
@@ -61,9 +68,12 @@ importers:
       '@types/node': 18.7.2
       '@types/react': 18.0.17
       '@types/react-dom': 18.0.6
-      '@types/react-modal': 3.13.1
+      '@typescript-eslint/eslint-plugin': 5.33.0_njno5y7ry2l2lcmiu4tywxkwnq
+      '@typescript-eslint/parser': 5.33.0_qugx7qdu5zevzvxaiqyxfiwquq
       autoprefixer: 10.4.8
       eslint: 8.21.0
+      eslint-config-next: 12.2.5_qugx7qdu5zevzvxaiqyxfiwquq
+      eslint-config-prettier: 8.5.0_eslint@8.21.0
       prettier: 2.7.1
       typescript: 4.7.4
 
@@ -1494,7 +1504,7 @@ packages:
       '@babel/runtime': 7.18.9
     dev: false
 
-  /@trpc/next/9.27.0_kaozq6pwpa25evkpxx7txxuxzq:
+  /@trpc/next/9.27.0_53c2cvpmnxe5mtuhk5oahaulfq:
     resolution: {integrity: sha512-hndgdL9yMIX+SedEeA97tlxjVzOOFKh+uIRgrysoTv9zrTDt+1njQF0p438/yg16AJZN9bv5e0NtuJYUvB4GKg==}
     peerDependencies:
       '@trpc/client': 9.27.0
@@ -1507,10 +1517,28 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       '@trpc/client': 9.27.0
+      '@trpc/react': 9.27.0_47cvokhwezr543ruivyygds3ai
       next: 12.2.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-query: 3.39.2_biqbaboplfbrettd7655fr4n2y
       react-ssr-prepass: 1.5.0_react@18.2.0
+    dev: false
+
+  /@trpc/react/9.27.0_47cvokhwezr543ruivyygds3ai:
+    resolution: {integrity: sha512-vAMBvI5AQP/US9MluO12V0OU/zwnGOUUTkRh22QQ20rcmR6NXPE28lMCdcJaHoTcbv1Mlr6vGXH7Er+/2+9tRg==}
+    peerDependencies:
+      '@trpc/client': 9.27.0
+      '@trpc/server': 9.27.0
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      react-query: ^3.37.0
+    dependencies:
+      '@babel/runtime': 7.18.9
+      '@trpc/client': 9.27.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-query: 3.39.2_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /@trpc/react/9.27.0_4zlohj3iyo7ijrka6uq4cxgyqe:
@@ -1563,12 +1591,6 @@ packages:
 
   /@types/react-dom/18.0.6:
     resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
-    dependencies:
-      '@types/react': 18.0.17
-    dev: true
-
-  /@types/react-modal/3.13.1:
-    resolution: {integrity: sha512-iY/gPvTDIy6Z+37l+ibmrY+GTV4KQTHcCyR5FIytm182RQS69G5ps4PH2FxtC7bAQ2QRHXMevsBgck7IQruHNg==}
     dependencies:
       '@types/react': 18.0.17
     dev: true
@@ -3784,6 +3806,25 @@ packages:
       '@babel/runtime': 7.18.9
       broadcast-channel: 3.7.0
       match-sorter: 6.3.1
+    dev: false
+
+  /react-query/3.39.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-F6hYDKyNgDQfQOuR1Rsp3VRzJnWHx6aRnnIZHMNGGgbL3SBgpZTDg8MQwmxOgpCAoqZJA+JSNCydF1xGJqKOCA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.18.9
+      broadcast-channel: 3.7.0
+      match-sorter: 6.3.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-remove-scroll-bar/2.3.3_ug65io7jkbhmo4fihdmbrh3ina:
